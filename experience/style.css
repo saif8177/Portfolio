@@ -499,3 +499,46 @@ header .navbar ul li a:hover {
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* mobile overrides */
+@media (max-width: 768px) {
+  header {
+    padding: 1.4rem 5%;
+  }
+
+  section {
+    padding: 2rem 5%;
+  }
+
+  .experience .timeline::after {
+    left: 24px;
+  }
+
+  .experience .container {
+    width: 100%;
+    padding: 0.8rem 1.2rem 0.8rem 5rem;
+  }
+
+  .experience .left::before,
+  .experience .right::before {
+    left: 38px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f68c09 transparent transparent;
+  }
+
+  .experience .left::after,
+  .experience .right::after {
+    left: 7px;
+  }
+
+  .experience .right {
+    left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56%;
+  }
+}

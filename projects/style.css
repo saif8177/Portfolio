@@ -351,3 +351,47 @@ header .navbar ul li a:hover{
   top: calc(100% - 12rem);
 }
 /* scroll top ends */
+
+/* mobile overrides */
+@media (max-width: 768px) {
+  header {
+    padding: 1.4rem 5%;
+  }
+
+  section {
+    padding: 2rem 5%;
+  }
+
+  .work .button-group {
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .work .button-group .btn {
+    padding: 0.9rem 1.4rem;
+    font-size: 1.4rem;
+  }
+
+  .work .box-container {
+    margin: 1rem 0;
+  }
+
+  .work .box-container .box {
+    height: 28rem;
+  }
+
+  .work .desc .btns {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56%;
+  }
+
+  .work .box-container .box {
+    height: 26rem;
+  }
+}

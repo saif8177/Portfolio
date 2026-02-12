@@ -1637,3 +1637,112 @@ form .button-area {
   object-fit: cover;
 }
 
+/* mobile overrides */
+@media (max-width: 768px) {
+  header {
+    padding: 1.4rem 5%;
+  }
+
+  section {
+    padding: 2rem 5%;
+  }
+
+  .home {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+    padding-top: 10rem;
+  }
+
+  .home .content h2,
+  .home .content h2 span {
+    font-size: 3.6rem;
+    line-height: 1.25;
+  }
+
+  .home .content p,
+  .home .content p span {
+    font-size: 2rem;
+  }
+
+  .home .btn {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .socials {
+    margin-top: 3rem;
+  }
+
+  .home .image,
+  .coloubox {
+    width: min(78vw, 320px);
+    height: min(78vw, 320px);
+    margin: 0 auto;
+  }
+
+  .about .row {
+    padding: 1rem 0;
+  }
+
+  .about .row .image {
+    width: 100%;
+    min-height: 280px;
+  }
+
+  .about .row .image img {
+    margin: 0 auto;
+    width: min(80vw, 300px);
+  }
+
+  .about .row .content {
+    margin-top: 0;
+    padding: 1rem 0;
+  }
+
+  .skills .container .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education .box-container .box {
+    width: 100%;
+  }
+
+  .work .box-container {
+    margin: 1rem 0;
+  }
+
+  .work .box-container .box {
+    height: 28rem;
+  }
+
+  .contact .container {
+    margin: 2rem 0;
+  }
+
+  .contact .content form {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 56%;
+  }
+
+  .home .content h2,
+  .home .content h2 span {
+    font-size: 3rem;
+  }
+
+  .skills .container .row {
+    grid-template-columns: 1fr;
+  }
+
+  .work .desc .btns {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
