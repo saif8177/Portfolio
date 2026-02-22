@@ -167,6 +167,9 @@ header .navbar ul li a:hover {
     display: block;
   }
 
+  .about .content {
+    margin-top: 5px;
+  }
   header .navbar {
     position: fixed;
     top: 6.5rem;
@@ -177,6 +180,12 @@ header .navbar ul li a:hover {
     background-color: #0e0f31;
     align-items: flex-start;
     transition: right 0.3s ease; /* Smooth transition when toggled */
+  }
+
+  .about .row .content h3 {
+    color: var(--four-color);
+    font-size: 2.5rem;
+    padding-top: 55px;
   }
 
   header .navbar ul {
@@ -224,7 +233,7 @@ header .navbar ul li a:hover {
 .home {
   position: relative;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 400px);
   gap: 1.0rem;
   min-height: 100vh;
   align-items: center;
@@ -248,7 +257,7 @@ header .navbar ul li a:hover {
 }
 .home .content {
   position: relative;
-  
+  z-index: 4;
 }
 /*.home .image {
   margin-top: 80%;
@@ -672,20 +681,31 @@ header .navbar ul li a:hover {
 /* about media queries starts*/
 @media screen and (max-width: 600px) {
   .about .row .image {
-    margin-top: 2rem;
+    margin-top: 0;
+    min-height: 34rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about .row .image .flip-front,
+  .about .row .image .flip-back {
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
   .about .row .image img {
-    margin: 0 auto;
-    width: 80%;
+    margin: 0;
+    width: min(80vw, 300px);
     mix-blend-mode: normal;
   }
   .about .row {
     padding: 0.5rem;
     margin-bottom: 7rem;
+    gap: 2.4rem;
   }
   .about .row .content {
-    padding: 1rem;
-    margin-top: 40rem;
+    padding: 1rem 0;
+    margin-top: 0;
   }
   .about .row .content .box-container {
     gap: 0;
@@ -1527,14 +1547,15 @@ form .button-area {
 }*/
 /* Existing styles for image flip effect */
 .home .image {
-  margin-top: 10%;
+  margin-top: 0;
   position: relative;
   align-items: center;
   perspective: 1000px;
   width: 400px;
   height: 400px;
   perspective: 1000px; /* Creates 3D space */
-
+  justify-self: center;
+  z-index: 1;
 }
 
 .home .flip-front,
@@ -1652,6 +1673,18 @@ form .button-area {
     gap: 3rem;
     text-align: center;
     padding-top: 10rem;
+    align-items: start;
+  }
+
+  .home .content {
+    order: 2;
+    z-index: 3;
+  }
+
+  .home .image {
+    order: 1;
+    margin-top: 0;
+    z-index: 1;
   }
 
   .home .content h2,
@@ -1685,15 +1718,27 @@ form .button-area {
 
   .about .row {
     padding: 1rem 0;
+    gap: 2.4rem;
+    align-items: flex-start;
   }
 
   .about .row .image {
     width: 100%;
-    min-height: 280px;
+    min-height: 34rem;
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about .row .image .flip-front,
+  .about .row .image .flip-back {
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .about .row .image img {
-    margin: 0 auto;
+    margin: 0;
     width: min(80vw, 300px);
   }
 
@@ -1731,6 +1776,7 @@ form .button-area {
   html {
     font-size: 56%;
   }
+
 
   .home .content h2,
   .home .content h2 span {
